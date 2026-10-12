@@ -1,0 +1,215 @@
+export interface FormulaItem {
+  id: string;
+  category: 'physics' | 'chemistry' | 'math' | 'sst' | 'language';
+  categoryTitle: string;
+  title: string;
+  formulaOrFact: string;
+  explanation: string;
+  importanceTag: 'VVI - 100% बोर्ड में आता है' | 'महत्वपूर्ण सूत्र' | 'अवधारणा / परिभाषा';
+  exampleOrNote?: string;
+}
+
+export const FORMULA_DATA: FormulaItem[] = [
+  // --- भौतिक विज्ञान (PHYSICS) ---
+  {
+    id: 'phy-1',
+    category: 'physics',
+    categoryTitle: 'भौतिकी (Physics)',
+    title: 'गोलीय दर्पण की फोकस दूरी व वक्रता त्रिज्या',
+    formulaOrFact: 'f = R / 2  तथा  R = 2f',
+    explanation: 'किसी भी गोलीय दर्पण (अवतल या उत्तल) की फोकस दूरी (f) उसकी वक्रता त्रिज्या (R) की आधी होती है।',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+    exampleOrNote: 'यदि R = 32 cm हो, तो फोकस दूरी f = 32/2 = 16 cm होगी।',
+  },
+  {
+    id: 'phy-2',
+    category: 'physics',
+    categoryTitle: 'भौतिकी (Physics)',
+    title: 'दर्पण सूत्र (Mirror Formula)',
+    formulaOrFact: '1/v + 1/u = 1/f',
+    explanation: 'u = वस्तु की दूरी (सदैव ऋणात्मक), v = प्रतिबिम्ब की दूरी, f = फोकस दूरी (अवतल के लिए -, उत्तल के लिए +)।',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+    exampleOrNote: 'आवर्धन: m = -v/u = h\'/h',
+  },
+  {
+    id: 'phy-3',
+    category: 'physics',
+    categoryTitle: 'भौतिकी (Physics)',
+    title: 'लेंस सूत्र (Lens Formula) एवं क्षमता',
+    formulaOrFact: '1/v - 1/u = 1/f   तथा   P = 1/f (मीटर में)',
+    explanation: 'लेंस की क्षमता का SI मात्रक डाइऑप्टर (Dioptre - D) होता है। उत्तल लेंस की क्षमता धनात्मक (+) तथा अवतल लेंस की ऋणात्मक (-) होती है।',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+    exampleOrNote: 'यदि f = 50 cm = 0.5 m, तो P = 1/0.5 = +2 D (उत्तल लेंस)। लेंस का आवर्धन m = +v/u होता है।',
+  },
+  {
+    id: 'phy-4',
+    category: 'physics',
+    categoryTitle: 'भौतिकी (Physics)',
+    title: 'स्नेल का नियम (अपवर्तन का द्वितीय नियम)',
+    formulaOrFact: 'sin(i) / sin(r) = n (स्थिरांक / अपवर्तनांक)',
+    explanation: 'किन्हीं दो माध्यमों के लिए आपतन कोण की ज्या (sin i) और अपवर्तन कोण की ज्या (sin r) का अनुपात एक नियतांक होता है।',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+    exampleOrNote: 'हीरे का अपवर्तनांक सबसे अधिक = 2.42 होता है। निर्वात में प्रकाश की चाल = 3 × 10⁸ m/s.',
+  },
+  {
+    id: 'phy-5',
+    category: 'physics',
+    categoryTitle: 'भौतिकी (Physics)',
+    title: 'ओम का नियम (Ohm\'s Law)',
+    formulaOrFact: 'V = I × R   (या  R = V / I)',
+    explanation: 'नियत ताप पर चालक के सिरों के बीच का विभवांतर (V) उसमें प्रवाहित विद्युत धारा (I) के समानुपाती होता है।',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+    exampleOrNote: 'प्रतिरोध (R) का SI मात्रक ओम (Ω) है। 1 Ω = 1 Volt / 1 Ampere.',
+  },
+  {
+    id: 'phy-6',
+    category: 'physics',
+    categoryTitle: 'भौतिकी (Physics)',
+    title: 'प्रतिरोधों का संयोजन (Series & Parallel)',
+    formulaOrFact: 'श्रेणीक्रम: Rs = R1 + R2 + R3 | समांतर क्रम: 1/Rp = 1/R1 + 1/R2 + 1/R3',
+    explanation: 'घरों में घरेलू विद्युत परिपथ हमेशा समांतर क्रम (Parallel) में जोड़े जाते हैं ताकि हर उपकरण को समान विभवांतर (220V) मिले।',
+    importanceTag: 'महत्वपूर्ण सूत्र',
+    exampleOrNote: 'विशिष्ट प्रतिरोध (प्रतिरोधकता ρ) का SI मात्रक ओम-मीटर (Ω·m) है।',
+  },
+  {
+    id: 'phy-7',
+    category: 'physics',
+    categoryTitle: 'भौतिकी (Physics)',
+    title: 'जूल का तापीय नियम एवं विद्युत शक्ति',
+    formulaOrFact: 'H = I²Rt    तथा    P = VI = I²R = V²/R',
+    explanation: 'विद्युत ऊर्जा (व्यावसायिक मात्रक) = 1 kWh (1 यूनिट) = 3.6 × 10⁶ जूल (J)। विद्युत शक्ति का SI मात्रक वाट (Watt) है।',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+  },
+
+  // --- रसायन विज्ञान (CHEMISTRY) ---
+  {
+    id: 'chem-1',
+    category: 'chemistry',
+    categoryTitle: 'रसायन (Chemistry)',
+    title: 'धातुओं की सक्रियता श्रेणी (Reactivity Series Trick)',
+    formulaOrFact: 'K > Na > Ca > Mg > Al > Zn > Fe > Pb > [H] > Cu > Hg > Ag > Au',
+    explanation: 'याद रखने की ट्रिक: "केदार नाथ का माली आलू जरा फीके पकाता है, कौन है आगे आओ।" पोटैशियम (K) सबसे अधिक सक्रिय तथा सोना (Au) सबसे कम सक्रिय है।',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+    exampleOrNote: 'सोडियम और पोटैशियम को केरोसिन तेल में डुबोकर रखा जाता है क्योंकि ये हवा-पानी से तेजी से क्रिया करते हैं।',
+  },
+  {
+    id: 'chem-2',
+    category: 'chemistry',
+    categoryTitle: 'रसायन (Chemistry)',
+    title: 'pH पैमाना एवं महत्वपूर्ण पदार्थों का मान',
+    formulaOrFact: 'pH < 7 = अम्लीय | pH = 7 = उदासीन | pH > 7 = क्षारीय',
+    explanation: 'रक्त (Blood) = 7.4 | शुद्ध जल = 7.0 | जठर रस (HCl) = 1.2 | नींबू का रस = 2.2 | मिल्क ऑफ मैग्नीशिया = 10 | सोडियम हाइड्रॉक्साइड = 14.',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+    exampleOrNote: 'अम्ल नीले लिटमस को लाल करता है। क्षार लाल लिटमस को नीला करता है।',
+  },
+  {
+    id: 'chem-3',
+    category: 'chemistry',
+    categoryTitle: 'रसायन (Chemistry)',
+    title: 'बोर्ड परीक्षा के 5 सबसे महत्वपूर्ण रासायनिक यौगिक',
+    formulaOrFact: '1. विरंजक चूर्ण (Bleaching Powder) = CaOCl₂\n2. बेकिंग सोडा (मीठा सोडा) = NaHCO₃\n3. धोने का सोडा = Na₂CO₃ · 10H₂O\n4. प्लास्टर ऑफ पेरिस = CaSO₄ · ½H₂O\n5. जिप्सम = CaSO₄ · 2H₂O',
+    explanation: 'जिप्सम को 373 K (100°C) पर गर्म करने से प्लास्टर ऑफ पेरिस बनता है।',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+    exampleOrNote: 'साधारण नमक = NaCl, चूने का पानी = Ca(OH)₂, संगमरमर/खड़िया/चूना पत्थर = CaCO₃',
+  },
+  {
+    id: 'chem-4',
+    category: 'chemistry',
+    categoryTitle: 'रसायन (Chemistry)',
+    title: 'हाइड्रोकार्बन के सामान्य सूत्र',
+    formulaOrFact: 'ऐल्केन = CₙH₂ₙ₊₂ | ऐल्कीन = CₙH₂ₙ | ऐल्काइन = CₙH₂ₙ₋₂',
+    explanation: 'ऐल्केन संतृप्त हाइड्रोकार्बन (सिंगल बॉन्ड) है जैसे मीथेन CH₄। ऐल्कीन और ऐल्काइन असंतृप्त हाइड्रोकार्बन (डबल व ट्रिपल बॉन्ड) हैं।',
+    importanceTag: 'महत्वपूर्ण सूत्र',
+    exampleOrNote: 'ऐसीटिलीन (एथाइन) = C₂H₂, एथीन = C₂H₄, एथेनॉल = C₂H₅OH, एथेनॉइक अम्ल (सिरका) = CH₃COOH',
+  },
+
+  // --- गणित (MATHEMATICS) ---
+  {
+    id: 'math-1',
+    category: 'math',
+    categoryTitle: 'गणित (Mathematics)',
+    title: 'द्विघात समीकरण एवं विविक्तकर (Discriminant)',
+    formulaOrFact: 'D = b² - 4ac    तथा मूल x = (-b ± √D) / 2a',
+    explanation: 'यदि D > 0: दो भिन्न वास्तविक मूल। यदि D = 0: दो बराबर वास्तविक मूल (-b/2a)। यदि D < 0: कोई वास्तविक मूल नहीं।',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+    exampleOrNote: 'मूलों का योगफल α + β = -b/a, मूलों का गुणनफल αβ = c/a.',
+  },
+  {
+    id: 'math-2',
+    category: 'math',
+    categoryTitle: 'गणित (Mathematics)',
+    title: 'समांतर श्रेढ़ी (A.P. - Arithmetic Progression)',
+    formulaOrFact: 'n-वां पद: an = a + (n - 1)d\nn पदों का योग: Sn = n/2 [2a + (n - 1)d] = n/2 [a + l]',
+    explanation: 'a = प्रथम पद, d = सार्व अंतर (a₂ - a₁), n = पदों की कुल संख्या, l = अंतिम पद।',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+    exampleOrNote: 'प्रथम n प्राकृत संख्याओं का योग = n(n + 1) / 2.',
+  },
+  {
+    id: 'math-3',
+    category: 'math',
+    categoryTitle: 'गणित (Mathematics)',
+    title: 'त्रिकोणमिति विशिष्ट कोण सारणी (0°, 30°, 45°, 60°, 90°)',
+    formulaOrFact: 'sin: 0, 1/2, 1/√2, √3/2, 1\ncos: 1, √3/2, 1/√2, 1/2, 0\ntan: 0, 1/√3, 1, √3, ∞(अपरिभाषित)',
+    explanation: 'tan θ = sin θ / cos θ | cot θ = 1/tan θ | sec θ = 1/cos θ | cosec θ = 1/sin θ',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+    exampleOrNote: 'त्रिकोणमितीय सर्वसमिकाएं: sin²θ + cos²θ = 1 | 1 + tan²θ = sec²θ | 1 + cot²θ = cosec²θ',
+  },
+  {
+    id: 'math-4',
+    category: 'math',
+    categoryTitle: 'गणित (Mathematics)',
+    title: 'निर्देशांक ज्यामिति (Coordinate Geometry)',
+    formulaOrFact: 'दूरी = √[(x₂ - x₁)² + (y₂ - y₁)²]\nविभाजन = [(m₁x₂ + m₂x₁) / (m₁+m₂), (m₁y₂ + m₂y₁) / (m₁+m₂)]\nमध्यबिंदु = [(x₁+x₂)/2, (y₁+y₂)/2]',
+    explanation: 'मूल बिंदु (Origin) के निर्देशांक (0, 0) होते हैं। मूल बिंदु से दूरी = √(x² + y²)। त्रिभुज का केन्द्रक = [(x₁+x₂+x₃)/3, (y₁+y₂+y₃)/3]',
+    importanceTag: 'महत्वपूर्ण सूत्र',
+  },
+  {
+    id: 'math-5',
+    category: 'math',
+    categoryTitle: 'गणित (Mathematics)',
+    title: 'ठोसों के पृष्ठीय क्षेत्रफल एवं आयतन',
+    formulaOrFact: 'बेलन का आयतन = πr²h | वक्रपृष्ठ = 2πrh\nशंकु का आयतन = ⅓πr²h | तिर्यक ऊंचाई l = √(r² + h²)\nगोले का आयतन = ⁴⁄₃πr³ | पृष्ठीय क्षेत्रफल = 4πr²',
+    explanation: 'अर्धगोले का वक्रपृष्ठ = 2πr², कुल पृष्ठीय क्षेत्रफल = 3πr², अर्धगोले का आयतन = ⅔πr³.',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+  },
+
+  // --- सामाजिक विज्ञान (SST) ---
+  {
+    id: 'sst-1',
+    category: 'sst',
+    categoryTitle: 'सामाजिक विज्ञान (SST)',
+    title: 'भारतीय राष्ट्रीय आंदोलन की मुख्य तिथियां',
+    formulaOrFact: '1917: चंपारण सत्याग्रह (गांधीजी का भारत में पहला आंदोलन)\n1919: 13 अप्रैल - जलियांवाला बाग हत्याकांड व रौलेट एक्ट\n1920: असहयोग आंदोलन शुरू\n1922: 5 फरवरी - चौरी-चौरा कांड\n1930: दांडी मार्च एवं सविनय अवज्ञा आंदोलन\n1942: 8 अगस्त - भारत छोड़ो आंदोलन',
+    explanation: 'बिहार के चंपारण में राजकुमार शुक्ल के बुलावे पर गांधीजी नीलहे किसानों की तीनकठिया प्रणाली के खिलाफ आए थे।',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+  },
+  {
+    id: 'sst-2',
+    category: 'sst',
+    categoryTitle: 'सामाजिक विज्ञान (SST)',
+    title: 'अर्थशास्त्र व राजनीति के मुख्य बिंदु',
+    formulaOrFact: 'भारतीय रिजर्व बैंक (RBI) की स्थापना: 1 अप्रैल 1935\nभारत में योजना आयोग का गठन: 15 मार्च 1950 (अब नीति आयोग)\nभारत का पहला तेल शोधक कारखाना: डिगबोई (असम)\nबिहार का तेल शोधक कारखाना: बरौनी',
+    explanation: 'प्राथमिक क्षेत्र = कृषि, पशुपालन, मत्स्य | द्वितीयक क्षेत्र = उद्योग व विनिर्माण | तृतीयक क्षेत्र = सेवा क्षेत्र (बैंकिंग, बीमा, परिवहन)।',
+    importanceTag: 'महत्वपूर्ण सूत्र',
+  },
+
+  // --- भाषा (HINDI / URDU / SANSKRIT) ---
+  {
+    id: 'lang-1',
+    category: 'language',
+    categoryTitle: 'साहित्य एवं भाषा (Hindi / Urdu / Sanskrit)',
+    title: 'गोधूलि (Hindi) पाठ और रचनाकार',
+    formulaOrFact: '1. श्रम विभाजन और जाति प्रथा: डॉ. भीमराव अंबेडकर (निबंध)\n2. विष के दांत: नलिन विलोचन शर्मा (कहानी)\n3. भारत से हम क्या सीखें: मैक्समूलर (भाषण)\n4. नाखून क्यों बढ़ते हैं: हजारी प्रसाद द्विवेदी (ललित निबंध)\n5. बहादुर: अमरकांत (कहानी)\n6. परंपरा का मूल्यांकन: रामविलास शर्मा',
+    explanation: 'वर्णिका भाग-2 की मुख्य कहानियां: मगम्मा (दही वाली मंगम्मा - श्रीनिवास, कन्नड़), ढाते विश्वास (सातकोड़ी होता, उड़िया), माँ (ईश्वर पेटलीकर, गुजराती)।',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+  },
+  {
+    id: 'lang-2',
+    category: 'language',
+    categoryTitle: 'साहित्य एवं भाषा (Hindi / Urdu / Sanskrit)',
+    title: 'दरक्षाँ (Urdu) व पीयूषम् (Sanskrit) मुख्य बिंदु',
+    formulaOrFact: 'उर्दू:\n- शबनम कमाली का असल नाम: मुस्तफा रज़ा (हमद खुदा-ए-अज्वजल)\n- मजमून "रिया" के मुसन्निफ: सर सैयद अहमद खान\n- अफसाना "फरार": डा. मोहम्मद मोहसिन\n- कटी हुई शाख: कमर जहाँ\n\nसंस्कृत:\n- मंगलम् पाठ: उपनिषद् से संकलित (सत्यमेव जयते - मुण्डकोपनिषद्)\n- पाटलिपुत्रवैभवम्: पटना का इतिहास (दामोदर गुप्त की कुट्टनीमत, राजशेखर की काव्यमीमांसा)\n- 16 संस्कार (षोडश संस्काराः)',
+    explanation: 'उर्दू और संस्कृत में सीधे पाठकों व रचयिताओं के नाम पर 10-15 वस्तुनिष्ठ प्रश्न हर साल आते हैं।',
+    importanceTag: 'VVI - 100% बोर्ड में आता है',
+  },
+];

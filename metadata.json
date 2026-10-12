@@ -1,0 +1,8 @@
+{
+  "name": "BSEB Matric Online Pariksha - Bihar Board Class 10 Hindi Medium Exam Portal",
+  "description": "बिहार बोर्ड कक्षा 10वीं ऑनलाइन परीक्षा पोर्टल। प्रश्न पत्र PDF अपलोड करें या मॉडल पेपर चुनें, वास्तविक परीक्षा दें, टाइमर, ओएमआर शीट और विस्तृत परिणाम पाएँ।",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
